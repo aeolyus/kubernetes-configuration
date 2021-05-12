@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: personal-website
+  namespace: personal-website
+  labels:
+    app: personal-website
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: personal-website
+  template:
+    metadata:
+      labels:
+        app: personal-website
+    spec:
+      containers:
+        - name: personal-website
+          image: aeolyus/website
+          ports:
+            - containerPort: 80
+          livenessProbe:
+            httpGet:
+              port: 80
