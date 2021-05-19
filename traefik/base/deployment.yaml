@@ -29,6 +29,10 @@ spec:
               value: ":80"
             - name: TRAEFIK_ENTRYPOINTS_WEBSECURE_ADDRESS
               value: ":443"
+            - name: TRAEFIK_ENTRYPOINTS_WEB_HTTP_REDIRECTIONS_ENTRYPOINT_TO
+              value: "websecure"
+            - name: TRAEFIK_ENTRYPOINTS_WEB_HTTP_REDIRECTIONS_ENTRYPOINT_SCHEME
+              value: "https"
             - name: TRAEFIK_PROVIDERS_KUBERNETESINGRESS
               value: "true"
             - name: TRAEFIK_PILOT_DASHBOARD
