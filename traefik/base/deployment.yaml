@@ -19,12 +19,17 @@ spec:
       containers:
         - name: traefik
           image: traefik:v2.4
-          args:
-            - "--entrypoints.web.Address=:80"
-            - "--entrypoints.websecure.Address=:443"
-            - "--providers.kubernetesingress"
           ports:
             - name: web
               containerPort: 80
             - name: websecure
               containerPort: 443
+          env:
+            - name: TRAEFIK_ENTRYPOINTS_WEB_ADDRESS
+              value: ":80"
+            - name: TRAEFIK_ENTRYPOINTS_WEBSECURE_ADDRESS
+              value: ":443"
+            - name: TRAEFIK_PROVIDERS_KUBERNETESINGRESS
+              value: "true"
+            - name: TRAEFIK_PILOT_DASHBOARD
+              value: "false"
