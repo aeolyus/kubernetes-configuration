@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: traefik-system
+  name: traefik
+  labels:
+    app: traefik
+spec:
+  template:
+    spec:
+      containers:
+        - name: traefik
+          ports:
+            - name: admin
+              containerPort: 8080
+          env:
+            - name: TRAEFIK_API_INSECURE
+              value: "true"
