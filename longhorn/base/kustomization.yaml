@@ -1,0 +1,17 @@
+namespace: longhorn-system
+resources:
+  - namespace.yaml
+  - deployment.yaml
+  - service.yaml
+  - frontend-deployment.yaml
+  - frontend-service.yaml
+  - daemonset.yaml
+  - configmap.yaml
+  - storageclass-configmap.yaml
+  - clusterrole.yaml
+  - clusterrolebinding.yaml
+  - role.yaml
+  - rolebinding.yaml
+  - podsecuritypolicy.yaml
+  - serviceaccount.yaml
+  - crd.yaml
