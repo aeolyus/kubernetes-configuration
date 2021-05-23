@@ -1,0 +1,5 @@
+bases:
+  - ../../base
+patchesStrategicMerge:
+  - service-admin-port.yaml
+  - deployment-port.yaml
