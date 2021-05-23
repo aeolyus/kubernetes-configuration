@@ -1,0 +1,4 @@
+bases:
+  - ../dashboard
+resources:
+  - ingress.yaml
