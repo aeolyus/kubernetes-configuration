@@ -1,4 +1,7 @@
 bases:
-  - ../dashboard
+  - ../../base
 resources:
   - ingress.yaml
+components:
+  - ../../components/longhorn
+  - ../../components/dashboard
