@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: traefik-system
+  name: traefik
+  labels:
+    app: traefik
+spec:
+  template:
+    spec:
+      containers:
+        - name: traefik
+          volumeMounts:
+            - name: traefik-acme-volume
+              mountPath: /data
+      volumes:
+        - name: traefik-acme-volume
+          persistentVolumeClaim:
+            claimName: traefik-acme-storage
