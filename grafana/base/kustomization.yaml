@@ -1,0 +1,7 @@
+namespace: grafana
+resources:
+  - namespace.yaml
+  - deployment.yaml
+  - service.yaml
+  - persistentvolumeclaim.yaml
+  - ingress.yaml
