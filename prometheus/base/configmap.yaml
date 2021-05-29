@@ -35,6 +35,9 @@ data:
             regex: (.+)
             target_label: __metrics_path__
             replacement: /api/v1/nodes/${1}/proxy/metrics
+          - source_labels: [__meta_kubernetes_node_name]
+            action: replace
+            target_label: kubernetes_node_name
 
       - job_name: 'kubernetes-apiservers'
         kubernetes_sd_configs:
@@ -47,6 +50,12 @@ data:
           - source_labels: [__meta_kubernetes_namespace, __meta_kubernetes_service_name, __meta_kubernetes_endpoint_port_name]
           action: keep
           regex: default;kubernetes;https
+          - source_labels: [__meta_kubernetes_namespace]
+            action: replace
+            target_label: kubernetes_namespace
+          - source_labels: [__meta_kubernetes_endpoints_name]
+            action: replace
+            target_label: kubernetes_endpoints_name
 
       - job_name: 'kubernetes-pods'
         kubernetes_sd_configs:
