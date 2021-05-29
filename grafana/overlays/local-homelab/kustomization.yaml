@@ -1,4 +1,6 @@
 bases:
   - ../../base
+resources:
+  - persistentvolumeclaim.yaml
 patches:
   - ingress.yaml
