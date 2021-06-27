@@ -35,5 +35,3 @@ spec:
               value: "https"
             - name: TRAEFIK_PROVIDERS_KUBERNETESINGRESS
               value: "true"
-            - name: TRAEFIK_PILOT_DASHBOARD
-              value: "false"

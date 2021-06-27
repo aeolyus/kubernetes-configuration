@@ -16,3 +16,7 @@ spec:
           env:
             - name: TRAEFIK_API_INSECURE
               value: "true"
+            - name: TRAEFIK_API_DASHBOARD
+              value: "true"
+            - name: TRAEFIK_PILOT_DASHBOARD
+              value: "false"
