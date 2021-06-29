@@ -1,0 +1,10 @@
+namespace: prometheus
+bases:
+  - ../../base
+resources:
+  - ingress.yaml
+  - persistentvolumeclaim.yaml
+patches:
+  - deployment-volume-mount.yaml
+components:
+  - ../../components/node-exporter
