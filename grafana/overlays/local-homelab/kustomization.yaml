@@ -1,7 +1,7 @@
+namespace: grafana
 bases:
   - ../../base
-resources:
-  - persistentvolumeclaim.yaml
 patches:
   - ingress.yaml
   - deployment.yaml
+  - persistentvolumeclaim.yaml
