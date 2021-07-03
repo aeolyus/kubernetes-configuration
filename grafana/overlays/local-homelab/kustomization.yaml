@@ -4,3 +4,4 @@ resources:
   - persistentvolumeclaim.yaml
 patches:
   - ingress.yaml
+  - deployment.yaml
