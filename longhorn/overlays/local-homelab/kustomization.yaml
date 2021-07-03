@@ -1,5 +1,7 @@
 namespace: longhorn-system
 bases:
   - ../../base
+resources:
+  - ingress.yaml
 patches:
   - storageclass-configmap.yaml
