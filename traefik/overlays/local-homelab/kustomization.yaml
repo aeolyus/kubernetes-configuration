@@ -1,5 +1,6 @@
 bases:
   - ../../base
+  - ../../external
 resources:
   - ingress.yaml
 components:

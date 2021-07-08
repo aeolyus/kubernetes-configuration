@@ -1,0 +1,5 @@
+namespace: external
+resources:
+  - namespace.yaml
+components:
+  - proxmox
