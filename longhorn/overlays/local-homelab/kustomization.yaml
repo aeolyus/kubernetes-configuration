@@ -3,5 +3,7 @@ bases:
   - ../../base
 resources:
   - ingress.yaml
+components:
+  - ../../components/metrics
 patches:
   - storageclass-configmap.yaml
