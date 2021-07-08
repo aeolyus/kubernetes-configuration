@@ -25,3 +25,5 @@ spec:
               value: "richardhuang.huang@gmail.com"
             - name: CF_API_KEY
               value: ""
+            - name: TRAEFIK_SERVERSTRANSPORT_INSECURESKIPVERIFY
+              value: "true"
