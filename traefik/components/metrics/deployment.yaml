@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: traefik
+  namespace: traefik-system
+spec:
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9090"
+    spec:
+      containers:
+        - name: traefik
+          env:
+            - name: TRAEFIK_METRICS_PROMETHEUS
+              value: "true"
+            - name: TRAEFIK_ENTRYPOINTS_METRICS_ADDRESS
+              value: ":9090"
+            - name: TRAEFIK_METRICS_PROMETHEUS_ENTRYPOINT
+              value: "metrics"

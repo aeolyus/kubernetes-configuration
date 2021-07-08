@@ -7,3 +7,4 @@ components:
   - ../../components/longhorn
   - ../../components/dashboard
   - ../../components/wildcard-certificates
+  - ../../components/metrics
