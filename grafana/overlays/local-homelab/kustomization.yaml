@@ -1,6 +1,8 @@
 namespace: grafana
 bases:
   - ../../base
+components:
+  - ../../components/metrics
 patches:
   - ingress.yaml
   - deployment.yaml
