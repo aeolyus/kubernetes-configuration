@@ -3,7 +3,6 @@ bases:
   - ../../base
 components:
   - ../../components/metrics
+  - ../../components/longhorn
 patches:
   - ingress.yaml
-  - deployment.yaml
-  - persistentvolumeclaim.yaml
