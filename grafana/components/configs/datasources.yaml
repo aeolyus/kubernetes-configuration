@@ -3,3 +3,4 @@ datasources:
     type: prometheus
     access: server
     url: http://prometheus.prometheus.svc.cluster.local:9090
+    isDefault: true
