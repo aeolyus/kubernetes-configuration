@@ -7,4 +7,4 @@
         - ip: 192.168.1.100
       ports:
         - name: https
-          port: 443
+          port: 8006
