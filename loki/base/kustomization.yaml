@@ -1,0 +1,13 @@
+namespace: loki
+resources:
+  - namespace.yaml
+  - podsecuritypolicy.yaml
+  - role.yaml
+  - rolebinding.yaml
+  - service.yaml
+  - serviceaccount.yaml
+  - statefulset.yaml
+configMapGenerator:
+  - name: loki-config
+    files:
+      - loki.yaml

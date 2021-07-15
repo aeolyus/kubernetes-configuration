@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: loki-psp-role
+rules:
+- apiGroups:
+    - extensions
+  resources:
+    - podsecuritypolicies
+  verbs:
+    - use
+  resourceNames:
+    - loki-psp
