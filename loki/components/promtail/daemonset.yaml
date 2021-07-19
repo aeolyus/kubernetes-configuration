@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: promtail
+spec:
+  selector:
+    matchLabels:
+      app: promtail
+  template:
+    metadata:
+      labels:
+        app: promtail
+      annotations:
+        prometheus.io/port: "3101"
+        prometheus.io/scrape: "true"
+    spec:
+      serviceAccountName: promtail-serviceaccount
+      containers:
+        - name: promtail
+          image: grafana/promtail
+          args:
+            - "-config.file=/etc/promtail/promtail.yaml"
+          volumeMounts:
+            - name: promtail-config
+              mountPath: /etc/promtail
+            - name: pods
+              mountPath: /var/log/pods
+              readOnly: true
+            - name: run
+              mountPath: /run/promtail
+          env:
+            - name: HOSTNAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: spec.nodeName
+      volumes:
+        - name: promtail-config
+          configMap:
+            name: promtail-config
+        - name: pods
+          hostPath:
+            path: /var/log/pods
+        - name: run
+          emptyDir: {}

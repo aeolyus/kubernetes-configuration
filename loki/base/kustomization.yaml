@@ -11,3 +11,5 @@ configMapGenerator:
   - name: loki-config
     files:
       - loki.yaml
+components:
+  - ../components/promtail
