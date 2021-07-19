@@ -5,7 +5,7 @@ metadata:
   namespace: personal-website
 spec:
   rules:
-    - host: personal-website.local.aeoly.us
+    - host: local.aeoly.us
       http:
         paths:
           - path: /
