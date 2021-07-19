@@ -4,3 +4,8 @@ datasources:
     access: server
     url: http://prometheus.prometheus.svc.cluster.local:9090
     isDefault: true
+
+  - name: Loki
+    type: loki
+    access: server
+    url: http://loki.loki.svc.cluster.local:3100
