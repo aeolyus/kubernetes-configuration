@@ -34,9 +34,6 @@ spec:
           volumeMounts:
             - name: loki-config
               mountPath: /etc/loki
-            - name: storage
-              mountPath: /data
-              subPath:
           ports:
             - name: http-metrics
               containerPort: 3100
@@ -58,5 +55,3 @@ spec:
         - name: loki-config
           configMap:
             name: loki-config
-        - name: storage
-          emptyDir: {}
