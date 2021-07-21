@@ -26,8 +26,6 @@ spec:
             - name: pods
               mountPath: /var/log/pods
               readOnly: true
-            - name: run
-              mountPath: /run/promtail
           env:
             - name: HOSTNAME
               valueFrom:
@@ -40,5 +38,3 @@ spec:
         - name: pods
           hostPath:
             path: /var/log/pods
-        - name: run
-          emptyDir: {}
