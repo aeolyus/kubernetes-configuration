@@ -1,2 +1,6 @@
+namespace: loki
 bases:
   - ../../base
+components:
+  - ../../components/longhorn
+  - ../../components/promtail
