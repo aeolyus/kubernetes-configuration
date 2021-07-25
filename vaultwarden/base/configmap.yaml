@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vaultwarden-config
+  labels:
+    app: vaultwarden
+data: 
+  DOMAIN: "https://vault.aeoly.us"
+  SIGNUPS_ALLOWED: "false"
+  ADMIN_TOKEN: "admin"

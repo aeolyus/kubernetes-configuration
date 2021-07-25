@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: vaultwarden
+  labels:
+    app: vaultwarden
+spec:
+  serviceName: vaultwarden
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vaultwarden
+  template:
+    metadata:
+      labels:
+        app: vaultwarden
+    spec:
+      containers:
+        - image: vaultwarden/server:latest
+          name: vaultwarden
+          envFrom:
+            - configMapRef:
+                name: vaultwarden-config
+          env:
+            - name: ADMIN_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: vaultwarden-secrets
+                  key: ADMIN_TOKEN
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+            - name: websocket
+              containerPort: 3012
+              protocol: TCP

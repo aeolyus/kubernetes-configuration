@@ -1,0 +1,7 @@
+namespace: vaultwarden
+resources:
+  - namespace.yaml
+  - service.yaml
+  - statefulset.yaml
+  - configmap.yaml
+  - secret.yaml
