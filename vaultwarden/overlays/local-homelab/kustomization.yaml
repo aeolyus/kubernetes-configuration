@@ -1,0 +1,5 @@
+namespace: vaultwarden
+bases:
+  - ../../base
+resources:
+  - ingress.yaml
