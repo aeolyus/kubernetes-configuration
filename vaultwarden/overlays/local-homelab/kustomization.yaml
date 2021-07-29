@@ -1,5 +1,7 @@
 namespace: vaultwarden
 bases:
   - ../../base
+components:
+  - ../../components/longhorn
 resources:
   - ingress.yaml
