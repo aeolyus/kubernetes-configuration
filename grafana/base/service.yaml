@@ -10,4 +10,3 @@ spec:
   selector:
     app: grafana
   sessionAffinity: None
-  type: LoadBalancer
