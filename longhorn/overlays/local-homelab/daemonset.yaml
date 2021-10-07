@@ -1,7 +1,0 @@
-apiVersion: apps/v1
-kind: DaemonSet
-spec:
-  template:
-    metadata:
-      annotations:
-        prometheus.io/scrape: "true"
