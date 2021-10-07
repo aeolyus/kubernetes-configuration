@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: traefik
+  namespace: traefik-system
+spec:
+  template:
+    spec:
+      containers:
+        - name: traefik
+          env:
+            - name: TRAEFIK_ENTRYPOINTS_WEBSECURE_HTTP_TLS
+              value: "true"
+            - name: TRAEFIK_ENTRYPOINTS_WEBSECURE_HTTP_TLS_DOMAINS_0_MAIN
+              value: "aeoly.us"
+            - name: TRAEFIK_ENTRYPOINTS_WEBSECURE_HTTP_TLS_DOMAINS_0_SANS
+              value: "*.aeoly.us"
+            - name: TRAEFIK_ENTRYPOINTS_WEBSECURE_HTTP_TLS_CERTRESOLVER
+              value: "default"
+            - name: TRAEFIK_CERTIFICATESRESOLVERS_DEFAULT_ACME_STORAGE
+              value: "/data/acme.json"
+            - name: TRAEFIK_CERTIFICATESRESOLVERS_DEFAULT_ACME_DNSCHALLENGE_PROVIDER
+              value: "cloudflare"
+            - name: CF_API_EMAIL
+              value: "richardhuang.huang@gmail.com"
+            - name: CF_API_KEY
+              value: ""
+            - name: TRAEFIK_SERVERSTRANSPORT_INSECURESKIPVERIFY
+              value: "true"

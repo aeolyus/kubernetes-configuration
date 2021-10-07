@@ -1,0 +1,11 @@
+bases:
+  - ../../base
+  - ../../external
+resources:
+  - ingress.yaml
+components:
+  - ../../components/longhorn
+  - ../../components/dashboard
+  - ../../components/metrics
+patches:
+  - statefulset.yaml
