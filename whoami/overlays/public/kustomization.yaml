@@ -1,0 +1,5 @@
+namespace: whoami
+bases:
+  - ../../base
+patches:
+  - ingress.yaml
