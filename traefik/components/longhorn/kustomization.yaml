@@ -3,4 +3,4 @@ kind: Component
 resources:
   - persistent-volume-claim.yaml
 patches:
-  - deployment-volume-mount.yaml
+  - statefulset-volume-mount.yaml

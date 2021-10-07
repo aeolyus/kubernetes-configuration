@@ -1,7 +1,7 @@
 namespace: traefik-system
 resources:
   - namespace.yaml
-  - deployment.yaml
+  - statefulset.yaml
   - service.yaml
   - serviceaccount.yaml
   - clusterrole.yaml
