@@ -1,0 +1,9 @@
+namespace: grafana
+bases:
+  - ../../base
+components:
+  - ../../components/metrics
+  - ../../components/configs
+  - ../../components/longhorn
+patches:
+  - ingress.yaml
