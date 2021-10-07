@@ -1,6 +1,6 @@
 namespace: grafana
 resources:
   - namespace.yaml
-  - deployment.yaml
+  - statefulset.yaml
   - service.yaml
   - ingress.yaml
