@@ -1,8 +1,6 @@
 namespace: longhorn-system
 bases:
   - ../../base
-resources:
-  - ingress.yaml
 components:
   - ../../components/metrics
 patches:
