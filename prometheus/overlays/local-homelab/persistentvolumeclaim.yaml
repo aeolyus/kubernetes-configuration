@@ -6,7 +6,7 @@ metadata:
     app: prometheus
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   storageClassName: longhorn
   resources:
     requests:
