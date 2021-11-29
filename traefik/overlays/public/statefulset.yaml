@@ -27,3 +27,5 @@ spec:
               value: ""
             - name: TRAEFIK_SERVERSTRANSPORT_INSECURESKIPVERIFY
               value: "true"
+            - name: TRAEFIK_GLOBAL_SENDANONYMOUSUSAGE
+              value: "false"

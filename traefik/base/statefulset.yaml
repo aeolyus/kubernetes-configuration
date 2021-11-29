@@ -36,3 +36,5 @@ spec:
               value: "https"
             - name: TRAEFIK_PROVIDERS_KUBERNETESINGRESS
               value: "true"
+            - name: TRAEFIK_GLOBAL_SENDANONYMOUSUSAGE
+              value: "false"
