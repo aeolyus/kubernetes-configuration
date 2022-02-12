@@ -12,7 +12,7 @@ spec:
             runAsUser: 0
           args:
             - "--config.file=/etc/prometheus/prometheus.yaml"
-            - "--storage.tsdb.retention.time=100y"
+            - "--storage.tsdb.retention.time=15d"
             - "--storage.tsdb.retention.size=5GB"
           volumeMounts:
             - name: prometheus-storage
