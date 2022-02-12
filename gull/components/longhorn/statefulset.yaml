@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: gull
+spec:
+  template:
+    spec:
+      containers:
+        - name: gull
+          volumeMounts:
+            - name: gull-data
+              mountPath: /data
+      volumes:
+        - name: gull-data
+          persistentVolumeClaim:
+            claimName: gull-storage

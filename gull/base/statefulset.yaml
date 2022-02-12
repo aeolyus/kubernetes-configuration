@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: gull
+  labels:
+    app: gull
+spec:
+  serviceName: gull
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gull
+  template:
+    metadata:
+      labels:
+        app: gull
+    spec:
+      containers:
+        - image: ghcr.io/aeolyus/gull
+          name: gull
+          ports:
+            - name: http
+              containerPort: 8081
+              protocol: TCP

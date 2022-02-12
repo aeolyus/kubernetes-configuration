@@ -1,0 +1,7 @@
+namespace: gull
+bases:
+  - ../../base
+components:
+  - ../../components/longhorn
+resources:
+  - ingress.yaml
