@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: calibre-web
+  labels:
+    app: calibre-web
+spec:
+  serviceName: calibre-web
+  replicas: 1
+  selector:
+    matchLabels:
+      app: calibre-web
+  template:
+    metadata:
+      labels:
+        app: calibre-web
+    spec:
+      containers:
+        - image: lscr.io/linuxserver/calibre-web:latest
+          name: calibre-web
+          env:
+            - name: TZ
+              value: "America/Los_Angeles"
+          ports:
+            - containerPort: 8083
+          volumeMounts:
+            - name: calibre-data
+              mountPath: /calibre
+            - name: calibre-web-data
+              mountPath: /config
+      volumes:
+        - name: calibre-web-data
+          persistentVolumeClaim:
+            claimName: calibre-web-storage
+        - name: calibre-data
+          persistentVolumeClaim:
+            claimName: calibre-storage

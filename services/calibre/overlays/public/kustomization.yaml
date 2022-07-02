@@ -1,0 +1,9 @@
+namespace: calibre
+bases:
+  - ../../base
+components:
+  - ../../components/longhorn
+  - ../../components/calibre-web
+  - ../../components/kavita
+resources:
+  - ingress.yaml

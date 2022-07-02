@@ -1,0 +1,5 @@
+namespace: calibre
+bases:
+  - ../../base
+components:
+  - ../../components/longhorn

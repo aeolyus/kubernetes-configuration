@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: kavita
+  labels:
+    app: kavita
+spec:
+  serviceName: kavita
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kavita
+  template:
+    metadata:
+      labels:
+        app: kavita
+    spec:
+      containers:
+        - image: kizaing/kavita:latest
+          name: kavita
+          env:
+          ports:
+            - containerPort: 5000
+          volumeMounts:
+            - name: kavita-data
+              mountPath: /kavita/config
+            - name: calibre-data
+              mountPath: /calibre
+      volumes:
+        - name: kavita-data
+          persistentVolumeClaim:
+            claimName: kavita-storage
+        - name: calibre-data
+          persistentVolumeClaim:
+            claimName: calibre-storage
