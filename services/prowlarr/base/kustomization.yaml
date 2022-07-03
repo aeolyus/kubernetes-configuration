@@ -1,0 +1,5 @@
+namespace: prowlarr
+resources:
+  - namespace.yaml
+  - service.yaml
+  - statefulset.yaml

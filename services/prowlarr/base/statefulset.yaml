@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: prowlarr
+  labels:
+    app: prowlarr
+spec:
+  serviceName: prowlarr
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prowlarr
+  template:
+    metadata:
+      labels:
+        app: prowlarr
+    spec:
+      containers:
+        # TODO: update to master when available
+        - image: lscr.io/linuxserver/prowlarr:develop
+          name: prowlarr
+          env:
+            - name: TZ
+              value: "America/Los_Angeles"
+          ports:
+            - containerPort: 9696

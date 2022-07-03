@@ -1,0 +1,5 @@
+namespace: prowlarr
+bases:
+  - ../../base
+components:
+  - ../../components/longhorn
