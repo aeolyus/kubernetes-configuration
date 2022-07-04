@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: calibre
+  labels:
+    app: calibre
+spec:
+  ports:
+    - name: desktop-gui
+      port: 8080
+      protocol: TCP
+  selector:
+    app: calibre

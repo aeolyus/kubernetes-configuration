@@ -21,3 +21,7 @@ spec:
           env:
             - name: TZ
               value: "America/Los_Angeles"
+          ports:
+            - name: desktop-gui
+              containerPort: 8080
+              protocol: TCP
