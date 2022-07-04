@@ -29,6 +29,14 @@ spec:
               containerPort: 51413
               protocol: UDP
           env:
+            - name: TRANSMISSION_RATIO_LIMIT
+              value: "2"
+            - name: TRANSMISSION_RATIO_LIMIT_ENABLED
+              value: "true"
+            - name: TRANSMISSION_IDLE_SEEDING_LIMIT
+              value: "60"
+            - name: TRANSMISSION_IDLE_SEEDING_LIMIT_ENABLED
+              value: "true"
             - name: OPENVPN_PROVIDER
               value: ""
             - name: OPENVPN_CONFIG
