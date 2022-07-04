@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: readarr
+spec:
+  template:
+    spec:
+      containers:
+        - name: readarr
+          volumeMounts:
+            - name: transmission-openvpn-data
+              mountPath: /data
+      volumes:
+        - name: transmission-openvpn-data
+          persistentVolumeClaim:
+            claimName: transmission-openvpn-storage

@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: readarr
+  labels:
+    app: readarr
+spec:
+  serviceName: readarr
+  replicas: 1
+  selector:
+    matchLabels:
+      app: readarr
+  template:
+    metadata:
+      labels:
+        app: readarr
+    spec:
+      containers:
+        # TODO: update to master when available
+        - image: lscr.io/linuxserver/readarr:develop
+          name: readarr
+          ports:
+            - name: web-ui
+              containerPort: 8787
+              protocol: TCP
+          env:
+            - name: TZ
+              value: "America/Los_Angeles"
+

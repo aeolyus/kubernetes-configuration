@@ -1,0 +1,7 @@
+namespace: media
+bases:
+  - ../../base
+components:
+  - ../../components/calibre
+  - ../../components/longhorn
+  - ../../components/transmission-openvpn

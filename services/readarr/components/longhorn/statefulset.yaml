@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: readarr
+spec:
+  template:
+    spec:
+      containers:
+        - name: readarr
+          volumeMounts:
+            - name: readarr-data
+              mountPath: /config
+      volumes:
+        - name: readarr-data
+          persistentVolumeClaim:
+            claimName: readarr-storage

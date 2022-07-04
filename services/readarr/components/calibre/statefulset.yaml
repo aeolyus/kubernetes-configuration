@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: readarr
+spec:
+  template:
+    spec:
+      containers:
+        - name: readarr
+          volumeMounts:
+            - name: calibre-data
+              mountPath: /calibre
+      volumes:
+        - name: calibre-data
+          persistentVolumeClaim:
+            claimName: calibre-storage
