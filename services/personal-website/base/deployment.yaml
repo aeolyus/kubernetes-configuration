@@ -15,6 +15,13 @@ spec:
       labels:
         app: personal-website
     spec:
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              app: personal-website
       containers:
         - name: personal-website
           image: aeolyus/website

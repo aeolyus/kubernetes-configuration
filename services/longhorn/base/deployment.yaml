@@ -15,6 +15,13 @@ spec:
       labels:
         app: longhorn-ui
     spec:
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels:
+              app: longhorn-ui
       containers:
       - name: longhorn-ui
         image: longhornio/longhorn-ui:v1.1.2
