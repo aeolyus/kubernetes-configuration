@@ -24,6 +24,10 @@ spec:
               containerPort: 8787
               protocol: TCP
           env:
+            - name: PUID
+              value: "0"
+            - name: PGID
+              value: "0"
             - name: TZ
               value: "America/Los_Angeles"
 
