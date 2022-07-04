@@ -1,4 +1,4 @@
-namespace: prowlarr
+namespace: media
 resources:
   - namespace.yaml
   - service.yaml

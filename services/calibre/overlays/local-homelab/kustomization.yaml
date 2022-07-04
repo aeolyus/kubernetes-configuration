@@ -1,4 +1,4 @@
-namespace: calibre
+namespace: media
 bases:
   - ../../base
 components:

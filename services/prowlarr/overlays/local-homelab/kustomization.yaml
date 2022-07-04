@@ -1,4 +1,4 @@
-namespace: prowlarr
+namespace: media
 bases:
   - ../../base
 components:
