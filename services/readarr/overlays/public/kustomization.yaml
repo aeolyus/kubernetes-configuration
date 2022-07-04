@@ -5,3 +5,5 @@ components:
   - ../../components/calibre
   - ../../components/longhorn
   - ../../components/transmission-openvpn
+resources:
+  - ingress.yaml
