@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: transmission-openvpn
+  labels:
+    app: transmission-openvpn
+spec:
+  serviceName: transmission-openvpn
+  replicas: 1
+  selector:
+    matchLabels:
+      app: transmission-openvpn
+  template:
+    metadata:
+      labels:
+        app: transmission-openvpn
+    spec:
+      containers:
+        - image: haugene/transmission-openvpn
+          name: transmission-openvpn
+          ports:
+            - name: web-ui
+              containerPort: 9091
+              protocol: TCP
+            - name: bittorrent-tcp
+              containerPort: 51413
+              protocol: TCP
+            - name: bittorrent-udp
+              containerPort: 51413
+              protocol: UDP
+          env:
+            - name: OPENVPN_PROVIDER
+              value: ""
+            - name: OPENVPN_CONFIG
+              value: ""
+            - name: OPENVPN_USERNAME
+              value: ""
+            - name: OPENVPN_PASSWORD
+              value: ""
+            - name: LOCAL_NETWORK
+              value: "192.168.0.0/16"
+          volumeMounts:
+            - name: tunnel
+              mountPath: /dev/net/tun
+          securityContext:
+            capabilities:
+              add:
+              - NET_ADMIN
+      volumes:
+        - name: tunnel
+          hostPath:
+            path: /dev/net/tun

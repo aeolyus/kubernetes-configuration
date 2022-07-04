@@ -1,0 +1,5 @@
+namespace: transmission-openvpn
+resources:
+  - namespace.yaml
+  - service.yaml
+  - statefulset.yaml
