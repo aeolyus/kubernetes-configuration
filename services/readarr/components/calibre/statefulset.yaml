@@ -9,7 +9,7 @@ spec:
         - name: readarr
           volumeMounts:
             - name: calibre-data
-              mountPath: /calibre
+              mountPath: /library
       volumes:
         - name: calibre-data
           persistentVolumeClaim:
