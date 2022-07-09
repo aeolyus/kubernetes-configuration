@@ -9,5 +9,8 @@ spec:
     - name: desktop-gui
       port: 8080
       protocol: TCP
+    - name: webserver
+      port: 8081
+      protocol: TCP
   selector:
     app: calibre

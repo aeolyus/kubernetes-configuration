@@ -25,3 +25,6 @@ spec:
             - name: desktop-gui
               containerPort: 8080
               protocol: TCP
+            - name: webserver
+              containerPort: 8081
+              protocol: TCP
