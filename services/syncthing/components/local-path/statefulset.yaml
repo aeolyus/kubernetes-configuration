@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: syncthing
+spec:
+  template:
+    spec:
+      containers:
+        - name: syncthing
+          volumeMounts:
+            - name: syncthing-data
+              mountPath: /data
+      volumes:
+        - name: syncthing-data
+          persistentVolumeClaim:
+            claimName: syncthing-storage

@@ -1,0 +1,7 @@
+namespace: syncthing
+bases:
+  - ../../base
+components:
+  - ../../components/local-path
+resources:
+  - ingress.yaml

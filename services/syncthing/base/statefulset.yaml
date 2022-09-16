@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: syncthing
+  labels:
+    app: syncthing
+spec:
+  serviceName: syncthing
+  replicas: 1
+  selector:
+    matchLabels:
+      app: syncthing
+  template:
+    metadata:
+      labels:
+        app: syncthing
+    spec:
+      containers:
+        - image: lscr.io/linuxserver/syncthing
+          name: syncthing
+          ports:
+            - name: http
+              containerPort: 8384
+              protocol: TCP
